@@ -14,7 +14,7 @@ int tick = 0;
 
 void loop () {
   
-    if (Serial.available()) {    //this is from a previous project
+    if (Serial.available()) {
       mood = Serial.parseInt();
       
       drawFace();
