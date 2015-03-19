@@ -70,8 +70,8 @@ void drawMouth() {
   // Sad
   uView.line(20, 50, 25, 45);
   uView.line(40, 45, 45, 50);
-  uView.circle(20, 29, 3);
-  uView.circle(45, 29, 3);  
+  uView.circle(20, 29, 2);
+  uView.circle(45, 29, 2);  
     
   }
   
