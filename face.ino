@@ -4,7 +4,7 @@ void setup() {
   Serial.begin(57600);
   uView.begin();		// start MicroView
   uView.clear(PAGE);		// clear page
-  uView.print("Hi Evan!");	// say hi
+  uView.print("Hi!");	// say hi
   uView.display();
   delay(1000);
 }
@@ -70,11 +70,45 @@ void drawMouth() {
   // Sad
   uView.line(20, 50, 25, 45);
   uView.line(40, 45, 45, 50);
-  uView.circle(20, 29, 2);
-  uView.circle(45, 29, 2);  
-    
+  cry();  
   }
   
+}
+void cry(){
+  for (int i = 0; i < 7; i++) {
+    uView.clear(PAGE);
+    
+    switch (i) {
+      case 0: 
+      
+        uView.circle(20, 19, 2);
+        uView.circle(45, 19, 2);
+        break;
+      case 1:
+     
+        uView.circle(20, 23, 2);
+        uView.circle(45, 23, 2);
+        break;
+      case 2:
+      
+        uView.circle(20, 27, 2);
+        uView.circle(45, 27, 2);
+        break;
+      case 3:
+      
+        uView.circle(20, 31, 2);
+        uView.circle(45, 31, 2);
+        break;
+    }
+  
+    // draw the static parts of the face    
+    drawEyes();
+    drawNose();
+    
+    // display and wait for the next frame to start
+    uView.display();
+    delay(100);
+  }  
 }
 void sing(){
   for (int i = 0; i < 7; i++) {
