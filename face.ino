@@ -20,10 +20,14 @@ void loop () {
       drawFace();
     }
     
-    if (random(0, 60) == 1)
+    if (random(0, 60) == 1){
       mood = random(1,4);
+      
       drawFace();
+    }
     if (random(0,10) == 1) talk();
+    
+    if (mood == 2) cry();
     
     if (random(0,70) == 1) sing();
     
@@ -70,12 +74,12 @@ void drawMouth() {
   // Sad
   uView.line(20, 50, 25, 45);
   uView.line(40, 45, 45, 50);
-  cry();  
+ 
   }
   
 }
 void cry(){
-  for (int i = 0; i < 7; i++) {
+  for (int i = 0; i < 4; i++) {
     uView.clear(PAGE);
     
     switch (i) {
@@ -104,7 +108,7 @@ void cry(){
     // draw the static parts of the face    
     drawEyes();
     drawNose();
-    
+    drawMouth();
     // display and wait for the next frame to start
     uView.display();
     delay(100);
@@ -149,7 +153,7 @@ void sing(){
   }  
 }  
 void talk() {
-  for (int i = 0; i < 7; i++) {
+  for (int i = 0; i < 14; i++) {
     uView.clear(PAGE);
     
     switch (i) {
